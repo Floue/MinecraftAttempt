@@ -80,7 +80,10 @@ public class World : MonoBehaviour
             }
         }
         foreach (ChunkCoord c in previouslyActiveChunks)
+        {
             chunks[c.x, c.z].isActive = false;
+            activeChunks = activeChunks.FindAll(chunk => !(chunk.x == c.x && chunk.z == c.z));
+        }
     }
 
     public byte GetVoxel(Vector3 pos)
