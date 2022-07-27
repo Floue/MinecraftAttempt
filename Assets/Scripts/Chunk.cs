@@ -15,7 +15,7 @@ public class Chunk
     List<int> triangles = new List<int>();
     List<Vector2> uvs = new List<Vector2>();
 
-    byte[,,] voxelMap = new byte[VoxelData.ChunkWidth, VoxelData.ChunkHeight, VoxelData.ChunkWidth];
+    public byte[,,] voxelMap = new byte[VoxelData.ChunkWidth, VoxelData.ChunkHeight, VoxelData.ChunkWidth];
 
     World world;
 
@@ -75,7 +75,6 @@ public class Chunk
                     if (world.blocktypes[voxelMap[x, y, z]].isSolid)
                         AddVoxelDataToChunk(new Vector3(x, y, z));
                 }
-                    
     }
 
     bool CheckVoxel(Vector3 pos)
